@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Flix</title>
+    <title>Super-Heroic Flix</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,24 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <nav>
+        <%= image_tag("logo") %>
+        <ul>
+          <li>
+            <%= link_to("All Movies", root_path) %>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="content">
+      <%= yield %>
+    </div>
+    <footer>
+      <p>
+        Copyright &copy; 2005-<%= Time.now.year %>
+        <%= link_to 'The Pragmatic Studio','https://pragmaticstudio.com' %>
+      </p>
+    </footer>
   </body>
 </html>
