@@ -1,4 +1,8 @@
 class Movie < ApplicationRecord
+  has_many :reviews, dependent: :destroy
+  has_many :favourites, dependent: :destroy
+  has_many :fans, through: :favourites, source: :user
+
   RATINGS = %w[G PG PG-13 R NC-17]
 
   validates :title, :released_on, :duration, presence: true
@@ -28,5 +32,13 @@ class Movie < ApplicationRecord
 
   def flop?
     total_gross < 225_000_000
+  end
+
+  def average_stars
+    reviews.average(:stars) || 0.0
+  end
+
+  def average_stars_as_percent
+    (average_stars / 5.0) * 100
   end
 end
