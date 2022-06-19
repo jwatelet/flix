@@ -1,24 +1,19 @@
 class MoviesController < ApplicationController
   before_action :require_signin, except: %i[index show]
   before_action :require_admin, except: %i[index show]
+  before_action :set_movie, only: %i[show edit update destroy]
 
   def index
-    @movies = Movie.released
+    @movies = Movie.send(movies_filter)
   end
 
   def show
-    @movie = Movie.find(params[:id])
     @fans = @movie.fans
     @favourite = current_user.favourites.find_by(movie_id: @movie.id) if current_user
-  end
-
-  def edit
-    @movie = Movie.find(params[:id])
+    @genres = @movie.genres.order(:name)
   end
 
   def update
-    @movie = Movie.find(params[:id])
-
     if @movie.update(movie_params)
       redirect_to @movie, notice: 'Movie successfully updated!'
     else
@@ -48,8 +43,20 @@ class MoviesController < ApplicationController
 
   private
 
+  def set_movie
+    @movie = Movie.find_by!(slug: params[:id])
+  end
+
   def movie_params
     params.require(:movie).permit(:title, :description, :rating, :released_on, :total_gross, :director, :duration,
-                                  :image_file_name)
+                                  :main_image, genre_ids: [])
+  end
+
+  def movies_filter
+    if params[:filter].in? %w[upcoming recent hits flops]
+      params[:filter]
+    else
+      :released
+    end
   end
 end
