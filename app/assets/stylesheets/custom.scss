@@ -58,7 +58,8 @@ header {
   margin-bottom: 3rem;
 
   nav {
-    @extend .navbar, .navbar-expand-md;
+    @extend .navbar,
+    .navbar-expand-md;
 
     img {
       height: 50px;
@@ -70,11 +71,13 @@ header {
     }
 
     a.button {
-      @extend .btn, .btn-outline-secondary;
+      @extend .btn,
+      .btn-outline-secondary;
     }
 
     ul {
-      @extend .nav, .navbar-nav;
+      @extend .nav,
+      .navbar-nav;
       letter-spacing: 1px;
 
       &.left {
@@ -118,7 +121,8 @@ header {
         }
 
         button {
-          @extend .btn, .btn-outline-secondary;
+          @extend .btn,
+          .btn-outline-secondary;
         }
       }
     }
@@ -138,7 +142,9 @@ section.movie {
   }
 
   .image {
-    @extend .col-md-3, .text-center;
+    @extend .col-md-3,
+    .text-center;
+
     img {
       width: 100px;
       box-shadow: $box-shadow;
@@ -146,7 +152,8 @@ section.movie {
   }
 
   .summary {
-    @extend .col-md-9, .text-start;
+    @extend .col-md-9,
+    .text-start;
   }
 
   h2 {
@@ -176,7 +183,8 @@ section.movie-details {
   @extend .row;
 
   .image {
-    @extend .col-md-3, .text-start;
+    @extend .col-md-3,
+    .text-start;
 
     input[type="submit"] {
       margin-top: 1rem;
@@ -184,7 +192,8 @@ section.movie-details {
   }
 
   .details {
-    @extend .col-md-7, .text-start;
+    @extend .col-md-7,
+    .text-start;
   }
 
   aside {
@@ -212,6 +221,7 @@ section.movie-details {
       padding-top: 0.35rem;
       padding-bottom: 0.35rem;
     }
+
     th {
       padding-right: 1rem;
     }
@@ -228,7 +238,8 @@ section.movie-details {
     }
 
     button[type="submit"] {
-      @extend .btn, .btn-outline-secondary;
+      @extend .btn,
+      .btn-outline-secondary;
       border-color: #cdd3d8;
       border-right: none;
       border-top-right-radius: 0;
@@ -249,7 +260,8 @@ section.movie-details {
   }
 
   a.review {
-    @extend .btn, .btn-success;
+    @extend .btn,
+    .btn-success;
     letter-spacing: 1px;
     text-transform: uppercase;
     margin-top: 1rem;
@@ -292,7 +304,8 @@ section.user {
     margin-top: 1rem;
 
     .button {
-      @extend .btn, .btn-sm;
+      @extend .btn,
+      .btn-sm;
 
       &.edit {
         @extend .btn-outline-secondary;
@@ -312,7 +325,8 @@ section.user {
     padding: 1rem;
 
     .details {
-      @extend .col-md-12, .text-start;
+      @extend .col-md-12,
+      .text-start;
 
       .title {
         font-size: 1.15rem;
@@ -322,6 +336,7 @@ section.user {
       .star-rating {
         margin-bottom: 0.3rem;
       }
+
       .date {
         font-size: 1rem;
         font-weight: 400;
@@ -367,7 +382,9 @@ ul.reviews {
     }
 
     .button {
-      @extend .btn, .btn-sm, .btn-outline-danger;
+      @extend .btn,
+      .btn-sm,
+      .btn-outline-danger;
       margin-left: 0.5rem;
     }
   }
@@ -397,14 +414,16 @@ section.admin {
     padding-top: 0;
   }
 
-  a.button, button {
-    @extend .btn, .btn-secondary;
+  a.button,
+  button {
+    @extend .btn,
+    .btn-secondary;
     letter-spacing: 1px;
     text-transform: uppercase;
   }
 }
 
-section.movie + section.admin {
+section.movie+section.admin {
   border-top: none;
   padding-top: 0;
 }
@@ -465,7 +484,8 @@ form:not([class="button_to"]) {
   }
 
   input[type="submit"] {
-    @extend .btn, .btn-primary;
+    @extend .btn,
+    .btn-primary;
     display: block;
     width: 100%;
     margin-top: 1.5rem;
@@ -477,7 +497,7 @@ form:not([class="button_to"]) {
     height: 20px;
   }
 
-  input[type="checkbox"] + label {
+  input[type="checkbox"]+label {
     @extend .form-check-label;
     padding-left: 0.5rem;
     margin-bottom: 0.5rem;
@@ -489,7 +509,7 @@ form:not([class="button_to"]) {
     height: 20px;
   }
 
-  input[type="radio"] + label {
+  input[type="radio"]+label {
     @extend .form-check-label;
     margin-bottom: 0.6rem;
     font-weight: 400;
@@ -501,7 +521,8 @@ form:not([class="button_to"]) {
   }
 
   .star {
-    @extend .form-check, .form-check-inline;
+    @extend .form-check,
+    .form-check-inline;
   }
 
   .checkboxes {
@@ -511,9 +532,11 @@ form:not([class="button_to"]) {
 
   div.field_with_errors {
     display: inline;
+
     label {
       color: $error-color;
     }
+
     input,
     textarea,
     select {
@@ -576,6 +599,7 @@ section.errors {
     position: relative;
     // text-shadow: 0px 1px 0 #a2a2a2;
   }
+
   .front-stars {
     display: flex;
     color: $accent-color;

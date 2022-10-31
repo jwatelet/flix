@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <title>Super-Heroic Flix</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
+  <head>
+    <title>Super-Heroic Flix</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-  <%= javascript_importmap_tags %>
-</head>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
 
-<body>
-  <header>
-     <%= image_tag("logo.png") %>
-  </header>
-  <%= yield %>
-  <footer>
-    <p>
-      Copyright &copy; <%= Time.now.year %>
-      <%= link_to "The Pragmatic Studio", "https://pragmaticstudio.com" %>
-    </p>
-  </footer>
-</body>
+  <body>
+    <header>
+      <%= image_tag("logo.png") %>
+    </header>
+    <%= yield %>
+    <footer>
+      <p>
+        Copyright &copy; <%= Time.now.year %>
+        <%= link_to "The Pragmatic Studio", "https://pragmaticstudio.com" %>
+      </p>
+    </footer>
+  </body>
 
 </html>
