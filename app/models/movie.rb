@@ -1,4 +1,6 @@
 class Movie < ApplicationRecord
+  belongs_to :movie
+
   RATINGS = %w[G PG PG-13 R NC-17]
 
   validates :title, :released_on, :duration, presence: true
