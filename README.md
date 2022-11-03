@@ -7,3 +7,9 @@ rails db:create
 rails db:migrate
 rails db:seed
 ```
+
+## How to debug with vscode
+
+```
+rdbg -n --open=vscode -c -- bin/rails s
+```
