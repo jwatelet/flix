@@ -12,7 +12,7 @@
     <%= link_to "Edit Account", edit_user_path(@user),
                   class: "button edit" %>
 
-    <%= link_to "Delite Account", user_path(@user) , class: "button delete",
+    <%= link_to "Delete Account", user_path(@user) , class: "button delete",
          data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
   </div>
 </section>
