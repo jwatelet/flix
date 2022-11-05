@@ -12,7 +12,8 @@
     <div class="actions">
       <%= link_to "Edit Account", edit_user_path(@user),
                   class: "button edit" %>
-
+    <% end %>
+    <% if  current_user_admin? %>
       <%= link_to "Delete Account", user_path(@user) , class: "button delete",
          data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
     </div>
