@@ -13,3 +13,12 @@ AllCops:
     - 'config/environments/*'
     - 'node_modules/**/*'
     - 'config/**/*'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
