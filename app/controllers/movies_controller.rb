@@ -10,6 +10,7 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
     @fans = @movie.fans
     @review = @movie.reviews.new
+    @favourite = current_user.favourites.find_by(movie_id: @movie.id) if current_user
   end
 
   def new
