@@ -6,7 +6,7 @@ local:
   service: Disk
   root: <%= Rails.root.join("storage") %>
 
-levercloud:
+clevercloud:
   service: S3
   access_key_id: <%= ENV['CELLAR_ADDON_KEY_ID'] %>
   secret_access_key: <%= ENV['CELLAR_ADDON_KEY_SECRET'] %>
