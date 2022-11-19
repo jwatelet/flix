@@ -81,6 +81,8 @@ test:
 #
 production:
   <<: *default
-  database: flix_production
-  username: flix
-  password: <%= ENV["FLIX_DATABASE_PASSWORD"] %>
+  database: <%= ENV['POSTGRESQL_ADDON_DB'] %>
+  username: <%= ENV['POSTGRESQL_ADDON_USER'] %>
+  password: <%= ENV['POSTGRESQL_ADDON_PASSWORD'] %>
+  host: <%= ENV['POSTGRESQL_ADDON_HOST'] %>
+  port: <%= ENV['POSTGRESQL_ADDON_PORT'] %>
