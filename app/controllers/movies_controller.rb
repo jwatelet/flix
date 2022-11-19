@@ -3,7 +3,7 @@ class MoviesController < ApplicationController
   before_action :require_admin, except: %i[index show]
 
   def index
-    @movies = Movie.released
+    @movies = Movie.send(movies_filter)
   end
 
   def show
@@ -50,6 +50,14 @@ class MoviesController < ApplicationController
   end
 
   private
+
+  def movies_filter
+    if params[:filter].in? %w[upcoming recent hits flops]
+      params[:filter]
+    else
+      :released
+    end
+  end
 
   def movie_params
     params.require(:movie).permit(:title, :description, :rating, :released_on, :total_gross, :director, :duration,
