@@ -15,6 +15,7 @@ class Movie < ApplicationRecord
   validates :released_on, :duration, presence: true
   validates :description, length: { minimum: 25 }
   validates :total_gross, numericality: { greater_than_or_equal_to: 0 }
+  validate :acceptable_image
 
   validates :rating, inclusion: { in: RATINGS }
 
@@ -51,6 +52,15 @@ class Movie < ApplicationRecord
   end
 
   private
+
+  def acceptable_image
+    return unless main_image.attached?
+
+    errors.add(:main_image, 'is too big') unless main_image.blob.byte_size <= 1.megabyte
+
+    acceptable_types = ['image/jpeg', 'image/png']
+    errors.add(:main_image, 'must be a JPEG or PNG') unless acceptable_types.include?(main_image.content_type)
+  end
 
   def set_slug
     self.slug = title.parameterize
