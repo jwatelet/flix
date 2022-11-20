@@ -12,3 +12,8 @@ rails db:seed
 ```
 rdbg -n --open=vscode -c -- bin/rails s
 ```
+
+## Config
+Configured to work with Clever Cloud:
+- postgresql database
+- S3 like (Cellar)
